@@ -1,5 +1,18 @@
 ---
-import { Container, FeatureCard } from '@littlesticks/odyssey-theme-components';
+import {
+	Container,
+	FeatureCard,
+	AnnouncementBar,
+	Button,
+	CustomerQuoteSection,
+	ThreeColumnTextSection,
+	YouTubeEmbedSection,
+	StickyTextImageSection,
+	CtaCardSection,
+	TextSection,
+} from '@littlesticks/odyssey-theme-components';
+import { Icon } from 'astro-icon';
+import TextAndImageHero from '../components/sections/heros/TextAndImageHero.astro';
 
 import Layout from '../layouts/Page.astro';
 import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro';
@@ -8,19 +21,109 @@ import HomeHeroSection from '../components/sections/heros/HomeHeroSection.astro'
 <Layout>
 	<HomeHeroSection />
 	<Container>
-		<section class="feature-card__section">
-			<h2>Landing Pages</h2>
-			<p>
-				Use one of our landing pages to jumpstart your website or
-				ad campaign.
-			</p>
-			<div class="feature-card__grid">
-				<FeatureCard href="/landing-pages/landing-1" title="Landing Page 1" imgSrc="/assets/images/home/screenshots/landing-1">
-				</FeatureCard>
-				<FeatureCard href="/landing-pages/landing-2" title="Landing Page 2" imgSrc="/assets/images/home/screenshots/landing-2">
-				</FeatureCard>
+		<CustomerQuoteSection
+			quoteText="We provide superannuation administration services to superannuation trustees and administrators and also takes care of administrative tasks for advisors through experience and technical innovation. we deliver these services at lower cost to you so you can focus on other important stuff."
+			customerName="Liberty Superannuation"
+		/>
+		<TextAndImageHero reversed>
+			<div slot="text-container">
+				<h1>Who we are</h1>
+				<h3>Trusted advisor</h3>
+				<p>Liberty super is your trusted advisor when it comes
+					to self managed superannuation matters including
+					tax compliance, admin, and investment strategy.</p>
+				<h3>Technological partner</h3>
+				<p>Liberty super provides strong technological
+					development skillsets to help you build up your own
+					capabilities to add value to your current client base
+					via efficient and optimum solutions, without adding
+					to your operating cost.</p>
 			</div>
-		</section>
+			<!--<div slot="btns-container">-->
+			<!--	<Button href="/theme/get-started" customIcon-->
+			<!--	>Get Started <Fragment slot="icon">-->
+			<!--		<Icon name="ic:baseline-chevron-right"/>-->
+			<!--	</Fragment></Button-->
+			<!--	>-->
+			<!--</div>-->
+			<picture slot="image-container">
+				<img
+					src="/assets/images/landing-1/landing-hero-1.jpg"
+					alt="Astro Odyssee"
+					id="home-hero-image"
+				/>
+			</picture>
+		</TextAndImageHero>
+		<ThreeColumnTextSection>
+			<div slot="column-1-body">
+				<h2>Super Administrator</h2>
+				<p>
+					We administrate your self managed superannuation fund for you, including bank reconciliation,
+					account-allocation, investment corporate actions, execute your investment strategy.
+				</p>
+			</div>
+			<!--<Button slot="column-1-cta">Learn More</Button>-->
+			<div slot="column-2-body">
+				<h2>Tax Advisor</h2>
+				<p>
+					We advise tax matters self managed superannuation fund, including tax administrative matters,
+					tax liabilities, tax audits, taxation office enquiries.
+				</p>
+			</div>
+			<!--<Button slot="column-2-cta" outlined>Learn More</Button>-->
+			<div slot="column-3-body">
+				<h2>Technological Partner</h2>
+				<p>
+					We provide partnership to you for any technological development needs, including building up
+					digital communication with government agencies. ATO, ASIC, SRO and other authorities. So you
+					can on sell these services to your clients with efficiency.
+				</p>
+			</div>
+			<!--<Button slot="column-3-cta">Learn More</Button>-->
+		</ThreeColumnTextSection>
+
+		<CtaCardSection background="var(--theme-surface-2)" color="var(--theme-on-surface-2)">
+			<h2>What we do</h2>
+			<!--<p>It only takes a couple clicks to have a new, modern website for your business or startup.</p>-->
+		</CtaCardSection>
+		<TextSection>
+			<!--<div slot="text-container">-->
+				<h2>Administrative tasks:</h2>
+			<!--</div>-->
+		</TextSection>
+		<StickyTextImageSection>
+			<div slot="text-container">
+				<h3>BGL</h3>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dolorem
+					tempore odio! Nemo consectetur ipsa aperiam similique maxime maiores
+					consequatur explicabo ut quibusdam fugiat corporis, dignissimos tenetur,
+					mollitia cumque. Velit.
+				</p>
+				<h3>Responsive</h3>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dolorem
+					tempore odio! Nemo consectetur ipsa aperiam similique maxime maiores
+					consequatur explicabo ut quibusdam fugiat corporis, dignissimos tenetur,
+					mollitia cumque. Velit.
+				</p>
+				<h3>Themeable</h3>
+				<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dolorem
+					tempore odio! Nemo consectetur ipsa aperiam similique maxime maiores
+					consequatur explicabo ut quibusdam fugiat corporis, dignissimos tenetur,
+					mollitia cumque. Velit.
+				</p>
+			</div>
+			<picture slot="image-container">
+				<img
+					src="/assets/images/landing-1/landing-sticky.jpg"
+					alt="Astro Odyssey"
+					loading="lazy"
+				/>
+			</picture>
+		</StickyTextImageSection>
+
 	</Container>
 
 	<Container>

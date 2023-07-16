@@ -1,18 +1,5 @@
 {
   "projects": {
-    "default": "little-sticks"
-  },
-  "targets": {
-    "little-sticks": {
-      "hosting": {
-        "odyssey-theme": [
-          "odyssey-theme"
-        ],
-        "www": [
-          "little-sticks"
-        ]
-      }
-    }
-  },
-  "etags": {}
+    "default": "libertysuper-c0ee5"
+  }
 }
