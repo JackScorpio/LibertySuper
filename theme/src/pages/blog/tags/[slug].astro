@@ -1,6 +1,6 @@
 ---
 import Layout from '../../../layouts/Page.astro'
-import { Container } from '@littlesticks/odyssey-theme-components';
+import { Container } from '../../../components/';
 import {generateTagData} from '../../../utils/helpers.js'
 
 
@@ -8,22 +8,22 @@ export async function getStaticPaths() {
   const allPosts = await Astro.glob('../posts/*.mdx');
   const sortedPosts = allPosts.sort((a, b) => new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf());
   const allCategoriesUnique = new Set();
-  
+
   sortedPosts.forEach(post => {
     post.frontmatter.tags && post.frontmatter.tags.map(tag => {
       allCategoriesUnique.add(tag);
     })
   })
-  
+
   const allCategoriesData = generateTagData(allCategoriesUnique);
    // map through the categories array
   return allCategoriesData.map((tag) => {
     // filter the posts that match the given category
     const posts = sortedPosts.filter((post) => post.frontmatter.tags.includes(tag.title))
       return {
-      params: {slug: tag.slug}, 
+      params: {slug: tag.slug},
       props: {
-        tag: tag.title, 
+        tag: tag.title,
         posts: posts
       }
     };
@@ -39,7 +39,7 @@ const seo ={
 
 <Layout seo={seo}>
   <Container narrow>
-    <section class="tag-page__section"> 
+    <section class="tag-page__section">
       <h1>Posts Tagged with "{tag}"</h1>
       <ul>
         {posts.map(post => (

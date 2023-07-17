@@ -2,51 +2,71 @@
 import Container from '../core/Container.astro';
 ---
 
- <Container>
-    <section class="three-col-text__section">
-      <div class="three-col-text__column">
-        <slot name="column-1-body"></slot>
-        <slot name="column-1-cta"></slot>
-      </div>
-      <div class="three-col-text__column">
-        <slot name="column-2-body"></slot>
-        <slot name="column-2-cta"></slot>
-      </div>
-      <div class="three-col-text__column">
-        <slot name="column-3-body"></slot>
-        <slot name="column-3-cta"></slot>
-      </div>
+<Container>
+    <section class="six-col-text__section">
+        <div class="six-col-text__column">
+            <slot name="column-1-body"></slot>
+            <slot name="column-1-cta"></slot>
+        </div>
+        <div class="six-col-text__column">
+            <slot name="column-2-body"></slot>
+            <slot name="column-2-cta"></slot>
+        </div>
+        <div class="six-col-text__column">
+            <slot name="column-3-body"></slot>
+            <slot name="column-3-cta"></slot>
+        </div>
+        <div class="six-col-text__column">
+            <slot name="column-4-body"></slot>
+            <slot name="column-4-cta"></slot>
+        </div>
+        <div class="six-col-text__column">
+            <slot name="column-5-body"></slot>
+            <slot name="column-5-cta"></slot>
+        </div>
+        <div class="six-col-text__column">
+            <slot name="column-6-body"></slot>
+            <slot name="column-6-cta"></slot>
+        </div>
     </section>
-  </Container>
+</Container>
 
-  <style>
-  .three-col-text__section {
-    --column-count: 3;
-    --column-width: calc(100% / var(--column-count));
-    margin: var(--section-margin) auto;
-    display: flex;
-    flex-wrap: wrap;
-    text-align: center;
-    justify-content: space-evenly;
-  }
-  .three-col-text__column {
-    width: var(--column-width);
-    margin-bottom: 2rem;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+<style>
+    .six-col-text__section {
+        --column-count: 6;
+        --column-width: calc(100% / var(--column-count));
+        margin: var(--section-margin) auto;
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: space-evenly;
+    }
 
-  @media(max-width: 1200px) {
-    .three-col-text__section {
-      --column-count: 2;
+    .six-col-text__column {
+        width: var(--column-width);
+        margin-bottom: 2rem;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
-  }
-  @media(max-width: 768px) {
-    .three-col-text__section {
-      --column-count: 1;
+
+    @media(max-width: 1920px) {
+        .six-col-text__section {
+            --column-count: 3;
+        }
     }
-  }
+
+    @media(max-width: 1200px) {
+        .six-col-text__section {
+            --column-count: 2;
+        }
+    }
+
+    @media(max-width: 768px) {
+        .six-col-text__section {
+            --column-count: 1;
+        }
+    }
 </style>
